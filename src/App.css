@@ -9,7 +9,7 @@
 }
 
 :root {
-	--mainWhite: #f1f5f8;
+	--off-white: #f1f5f8;
 	--white: #fff;
 	--red: #e73a3a;
 	--yellow: #fdc00f;
@@ -50,9 +50,9 @@ body {
 	overflow-x: hidden;
 }
 
-.App {
+/* .App {
 	font-family: inter;
-}
+} */
 
 .grid {
 	display: grid;
