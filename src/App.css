@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+*,
+::before,
+::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--mainWhite: #f1f5f8;
+	--white: #fff;
+	--red: #e73a3a;
+	--yellow: #fdc00f;
+	--orange: #fe8c39;
+	--darkGrey: #333;
+	--lightGrey: #e2dddd;
+	--mainGreen: #29ca8e;
+	--mainBlue: #0a3b63;
+	--hoverBlue: #bfdbfe;
+	--mainSpacing: 0.1rem;
+	--wordSpacing: 0.25rem;
+	--mainTransition: all 2s ease-in-out;
+}
+
+li {
+	list-style: none;
+	display: inline;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+input,
+button,
+textarea {
+	border: none;
+	outline: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+body {
+	background: var(--mainWhite);
+	line-height: 1.8rem;
+	overflow-x: hidden;
+}
+
+.App {
+	font-family: inter;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	margin: 0 auto;
+}
+@media (max-width: 768px) {
+	.ethLogo {
+		display: none !important;
+	}
+}
