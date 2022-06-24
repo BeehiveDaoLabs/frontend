@@ -11,7 +11,6 @@ export const NavbarWrapper = styled.div`
 	.logo {
 		grid-column: 1/2;
 		grid-template-columns: repeat(2, 1fr);
-		background: orange;
 		grid-gap: 0 0.5em;
 		align-items: center;
 		color: var(--dark);
@@ -19,6 +18,21 @@ export const NavbarWrapper = styled.div`
 		img {
 			width: 40px;
 			height: 40px;
+		}
+	}
+
+	.form-group {
+		grid-column: 4/8;
+		height: auto;
+		width: 100%;
+		height: 100%;
+
+		align-items: center;
+
+		input {
+			height: 50px;
+			padding: 0 0.5em;
+			border-radius: 0.5em;
 		}
 	}
 `;

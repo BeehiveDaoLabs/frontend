@@ -9,6 +9,13 @@ function Navbar() {
 				<img src={logo} alt="logo" />
 				<h2>opensea</h2>
 			</div>
+			<form className="grid form-group">
+				<input
+					type="text"
+					className="form-control"
+					placeholder="Search items, collections, and accounts"
+				/>
+			</form>
 		</NavbarWrapper>
 	);
 }
