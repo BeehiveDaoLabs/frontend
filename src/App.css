@@ -19,9 +19,9 @@
 	--mainGreen: #29ca8e;
 	--mainBlue: #0a3b63;
 	--hoverBlue: #bfdbfe;
-	--mainSpacing: 0.1rem;
+	--letter-spacing: 2px;
 	--wordSpacing: 0.25rem;
-	--mainTransition: all 2s ease-in-out;
+	--transition: all 2s ease-in-out;
 }
 
 li {
