@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiUserCircle, BiWalletAlt, BiSearch } from "react-icons/bi";
 import { FaBars } from "react-icons/fa";
@@ -9,22 +10,28 @@ import logo from "../../assets/logo/opensea-pride.svg";
 const _navListDefaults = (
 	<>
 		<li className="grid">
-			<p>Explore</p>
+			<p>
+				<Link to="/explore">Explore</Link>
+			</p>
 		</li>
 		<li className="grid">
-			<p>Stats</p>
+			<Link to="/stats">Stats</Link>
 		</li>
 		<li className="grid">
-			<p>Resources</p>
+			<Link to="/resources">Resources</Link>
 		</li>
 		<li className="grid">
-			<p>Create</p>
+			<Link to="/create">Create</Link>
 		</li>
 	</>
 );
 
 function Navbar() {
 	const [navState, setNavState] = useState(false);
+	const [searchInput, setSearchInput] = useState("");
+	const [mobileSearchInput, setMobileSearchInput] = useState(false);
+
+	console.log("mobileSearchInput", mobileSearchInput);
 
 	const _toggleButton = navState ? (
 		<AiOutlineClose
@@ -38,17 +45,27 @@ function Navbar() {
 		/>
 	);
 
+	const _handleSubmit = async (e) => {
+		e.preventDefault();
+
+		console.log("searchInput", searchInput);
+		// clear input
+		setSearchInput("");
+	};
+
 	return (
 		<NavbarWrapper className="grid">
 			<div className="grid logo">
 				<img src={logo} alt="logo" />
 				<h2>opensea</h2>
 			</div>
-			<form className="grid form-group">
+			<form className="grid form-group" onSubmit={_handleSubmit}>
 				<input
 					type="text"
+					value={searchInput}
 					className="form-control"
 					placeholder="Search items, collections, and accounts"
+					onChange={(e) => setSearchInput(e.target.value)}
 				/>
 			</form>
 			{/* large screens xl */}
@@ -81,9 +98,25 @@ function Navbar() {
 			{/* small screens xs */}
 			<ul className="grid nav-list nav-list-xs">
 				<li className="grid">
-					<BiSearch className="icon" />
+					<BiSearch
+						className="icon"
+						onClick={() => setMobileSearchInput((state) => !state)}
+					/>
 				</li>
 				<li className="grid">{_toggleButton}</li>
+
+				{/* mobile search form */}
+				<div className={mobileSearchInput ? "grid mobile-search" : "grid hide"}>
+					<form className="grid form-group-xs" onSubmit={_handleSubmit}>
+						<input
+							type="text"
+							value={searchInput}
+							className="form-control"
+							placeholder="Search items, collections, and accounts"
+							onChange={(e) => setSearchInput(e.target.value)}
+						/>
+					</form>
+				</div>
 			</ul>
 			{navState && <Panel />}
 		</NavbarWrapper>
