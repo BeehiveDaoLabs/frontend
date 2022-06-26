@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 
 function App() {
 	return (
-		<div className="grid">
+		<div className="grid App">
 			<Navbar />
 			<Routes>
 				<Route exact path="/" element={<Home />} />
