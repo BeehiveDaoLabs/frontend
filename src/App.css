@@ -9,6 +9,7 @@
 }
 
 :root {
+	--nav-height: 70px;
 	--off-white: #f1f5f8;
 	--white: #fff;
 	--red: #e73a3a;
@@ -17,7 +18,7 @@
 	--darkGrey: #333;
 	--lightGrey: #e2dddd;
 	--mainGreen: #29ca8e;
-	--mainBlue: #0a3b63;
+	--mainBlue: #0c6cf2;
 	--hoverBlue: #bfdbfe;
 	--letter-spacing: 2px;
 	--wordSpacing: 0.25rem;
@@ -50,9 +51,12 @@ body {
 	overflow-x: hidden;
 }
 
-/* .App {
-	font-family: inter;
-} */
+.App {
+	max-width: 1440px;
+	height: auto;
+	align-items: center;
+	margin: auto;
+}
 
 .grid {
 	display: grid;
