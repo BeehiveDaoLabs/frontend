@@ -29,9 +29,17 @@ const _navListDefaults = (
 function Navbar() {
 	const [navState, setNavState] = useState(false);
 	const [searchInput, setSearchInput] = useState("");
-	const [mobileSearchInput, setMobileSearchInput] = useState(false);
+	const [mobileSearchState, setMobileSearchState] = useState(false);
 
-	console.log("mobileSearchInput", mobileSearchInput);
+	const _handleMobileSearchState = (e) => {
+		e.preventDefault();
+		if (navState) {
+			setNavState(false);
+			setMobileSearchState(true);
+			return;
+		}
+		setMobileSearchState((state) => !state);
+	};
 
 	const _toggleButton = navState ? (
 		<AiOutlineClose
@@ -100,13 +108,14 @@ function Navbar() {
 				<li className="grid">
 					<BiSearch
 						className="icon"
-						onClick={() => setMobileSearchInput((state) => !state)}
+						onClick={_handleMobileSearchState}
+						// onClick={() => setMobileSearchState((state) => !state)}
 					/>
 				</li>
 				<li className="grid">{_toggleButton}</li>
 
 				{/* mobile search form */}
-				<div className={mobileSearchInput ? "grid mobile-search" : "grid hide"}>
+				<div className={mobileSearchState ? "grid mobile-search" : "grid hide"}>
 					<form className="grid form-group-xs" onSubmit={_handleSubmit}>
 						<input
 							type="text"

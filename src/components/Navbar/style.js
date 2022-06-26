@@ -128,7 +128,7 @@ export const NavbarWrapper = styled.div`
 
 						li {
 							.icon {
-								font-size: 1.5em;
+								font-size: 1.35em;
 							}
 						}
 					}
@@ -145,6 +145,10 @@ export const NavbarWrapper = styled.div`
 						.form-group-xs {
 							grid-column: 1/13;
 							width: 95%;
+
+							input {
+								font-size: 0.75em;
+							}
 						}
 					}
 				}
