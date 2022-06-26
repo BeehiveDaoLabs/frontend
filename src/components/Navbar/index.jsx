@@ -63,71 +63,75 @@ function Navbar() {
 
 	return (
 		<NavbarWrapper className="grid">
-			<div className="grid logo">
-				<img src={logo} alt="logo" />
-				<h2>opensea</h2>
-			</div>
-			<form className="grid form-group" onSubmit={_handleSubmit}>
-				<input
-					type="text"
-					value={searchInput}
-					className="form-control"
-					placeholder="Search items, collections, and accounts"
-					onChange={(e) => setSearchInput(e.target.value)}
-				/>
-			</form>
-			{/* large screens xl */}
-			<ul className="grid nav-list nav-list-xl">
-				{_navListDefaults}
-				<li className="grid list-item">
-					<BiUserCircle className="icon" />
-				</li>
-				<li className="grid list-item">
-					<BiWalletAlt className="icon" />
-				</li>
-			</ul>
-
-			{/* normal screens nl */}
-			<ul className="grid nav-list nav-list-nl">
-				<li className="grid list-item">
-					<BiUserCircle className="icon" />
-				</li>
-				<li className="grid list-item">
-					<BiWalletAlt className="icon" />
-				</li>
-				<li className="grid list-item">{_toggleButton}</li>
-			</ul>
-
-			{/* medium screens md */}
-			<ul className="grid nav-list nav-list-md">
-				<li className="grid list-item">{_toggleButton}</li>
-			</ul>
-
-			{/* small screens xs */}
-			<ul className="grid nav-list nav-list-xs">
-				<li className="grid">
-					<BiSearch
-						className="icon"
-						onClick={_handleMobileSearchState}
-						// onClick={() => setMobileSearchState((state) => !state)}
-					/>
-				</li>
-				<li className="grid">{_toggleButton}</li>
-
-				{/* mobile search form */}
-				<div className={mobileSearchState ? "grid mobile-search" : "grid hide"}>
-					<form className="grid form-group-xs" onSubmit={_handleSubmit}>
-						<input
-							type="text"
-							value={searchInput}
-							className="form-control"
-							placeholder="Search items, collections, and accounts"
-							onChange={(e) => setSearchInput(e.target.value)}
-						/>
-					</form>
+			<div className="grid nav-container">
+				<div className="grid logo">
+					<img src={logo} alt="logo" />
+					<h2>opensea</h2>
 				</div>
-			</ul>
-			{navState && <Panel />}
+				<form className="grid form-group" onSubmit={_handleSubmit}>
+					<input
+						type="text"
+						value={searchInput}
+						className="form-control"
+						placeholder="Search items, collections, and accounts"
+						onChange={(e) => setSearchInput(e.target.value)}
+					/>
+				</form>
+				{/* large screens xl */}
+				<ul className="grid nav-list nav-list-xl">
+					{_navListDefaults}
+					<li className="grid list-item">
+						<BiUserCircle className="icon" />
+					</li>
+					<li className="grid list-item">
+						<BiWalletAlt className="icon" />
+					</li>
+				</ul>
+
+				{/* normal screens nl */}
+				<ul className="grid nav-list nav-list-nl">
+					<li className="grid list-item">
+						<BiUserCircle className="icon" />
+					</li>
+					<li className="grid list-item">
+						<BiWalletAlt className="icon" />
+					</li>
+					<li className="grid list-item">{_toggleButton}</li>
+				</ul>
+
+				{/* medium screens md */}
+				<ul className="grid nav-list nav-list-md">
+					<li className="grid list-item">{_toggleButton}</li>
+				</ul>
+
+				{/* small screens xs */}
+				<ul className="grid nav-list nav-list-xs">
+					<li className="grid">
+						<BiSearch
+							className="icon"
+							onClick={_handleMobileSearchState}
+							// onClick={() => setMobileSearchState((state) => !state)}
+						/>
+					</li>
+					<li className="grid">{_toggleButton}</li>
+
+					{/* mobile search form */}
+					<div
+						className={mobileSearchState ? "grid mobile-search" : "grid hide"}
+					>
+						<form className="grid form-group-xs" onSubmit={_handleSubmit}>
+							<input
+								type="text"
+								value={searchInput}
+								className="form-control"
+								placeholder="Search items, collections, and accounts"
+								onChange={(e) => setSearchInput(e.target.value)}
+							/>
+						</form>
+					</div>
+				</ul>
+				{navState && <Panel />}
+			</div>
 		</NavbarWrapper>
 	);
 }
