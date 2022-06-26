@@ -30,6 +30,12 @@ export const PortalWrapper = styled.div`
 		}
 	}
 
+	@media (min-width: 1199px) {
+		& {
+			display: none;
+		}
+	}
+
 	@media (max-width: 600px) {
 		& {
 			width: 100%;
