@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export const PortalWrapper = styled.div`
 	position: absolute;
-	top: 70px;
+	top: var(--nav-height);
 	right: 0;
 	width: 350px;
-	height: calc(100% - 70px);
-	background: red;
+	height: calc(100% - var(--nav-height));
 	user-select: none;
 
 	.list-group {
