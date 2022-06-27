@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import Country from "./Country";
 import { FormWrapper } from "./style";
@@ -65,4 +65,4 @@ function Form({ title, subtitle, isSignUp }) {
 	);
 }
 
-export default Form;
+export default memo(Form);
