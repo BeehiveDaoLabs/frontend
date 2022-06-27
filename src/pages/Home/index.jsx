@@ -1,7 +1,13 @@
 import React from "react";
+import Banner from "../../components/Banner";
+import { HomeWrapper } from "./style";
 
 function Home() {
-	return <div>Welcome to Home Page</div>;
+	return (
+		<HomeWrapper className="grid">
+			<Banner />
+		</HomeWrapper>
+	);
 }
 
 export default Home;
