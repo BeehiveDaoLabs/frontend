@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 // import { BiUserCircle } from "react-icons/bi";
 import { LoginWrapper } from "./style";
 import Form from "../../components/Form";
@@ -14,14 +14,10 @@ function Login() {
 						<h2>Opensea.io</h2>
 					</div>
 				</header> */}
-				<Form
-					title="Create Your Opensea.io Account"
-					// subtitle="Get Started For Free by Signing Up Now."
-					isSignUp={true}
-				/>
+				<Form title="Login into your Beehive Dao account" isSignUp={false} />
 			</div>
 		</LoginWrapper>
 	);
 }
 
-export default Login;
+export default memo(Login);
