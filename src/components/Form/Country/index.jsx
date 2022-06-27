@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
 import reactDom from "react-dom";
 import { appContext } from "../../../Context/app";
 import { CountryWrapper } from "./style";
@@ -29,4 +29,4 @@ function Country({ setCountry }) {
 	);
 }
 
-export default Country;
+export default memo(Country);
