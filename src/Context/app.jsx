@@ -1,5 +1,5 @@
 import { createContext, Component } from "react";
-import countries from "../assets/data/countries.json";
+import countries from "../data/countries.json";
 const appContext = createContext();
 
 class AppProvider extends Component {
